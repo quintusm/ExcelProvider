@@ -1,3 +1,6 @@
+### 1.0.2
+* Move to FAKE 5
+
 #### 1.0.1
 * Fix bug in nuget package
 

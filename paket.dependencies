@@ -16,8 +16,12 @@ group Build
   source https://api.nuget.org/v3/index.json
   generate_load_scripts:true
   framework: netstandard2.0
-
   nuget Fake.Core.Target
+  nuget Fake.Core.ReleaseNotes
+  nuget Fake.DotNet.AssemblyInfoFile
+  nuget Fake.IO.FileSystem
+
+
 
 group Test
   source https://nuget.org/api/v2

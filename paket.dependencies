@@ -1,3 +1,4 @@
+version 5.245.1
 source https://nuget.org/api/v2
 
 frameworks: net45, netcoreapp2.0, netstandard2.0
@@ -12,13 +13,11 @@ github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fsi
 github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fs
 
 group Build
-  source https://nuget.org/api/v2
-  framework: net45
+  source https://api.nuget.org/v3/index.json
+  generate_load_scripts:true
+  framework: netstandard2.0
 
-  nuget FAKE 4.64.13
-  nuget FSharp.Formatting 2.14.4
-
-  github fsharp/FAKE modules/Octokit/Octokit.fsx
+  nuget Fake.Core.Target
 
 group Test
   source https://nuget.org/api/v2

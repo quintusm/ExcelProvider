@@ -9,6 +9,7 @@ open Fake.DotNet
 open Fake.IO
 open Fake.IO.Globbing.Operators
 
+Target.initEnvironment()
 
 // The name of the project
 // (used by attributes in AssemblyInfo, name of a NuGet package and directory in 'src')
@@ -28,12 +29,13 @@ let (|Fsproj|) (projFileName : string) =
     | _ -> failwith (sprintf "Project file %s not supported. Unknown project type." projFileName)
 
 
+// If you want to use MSBuild instead of dotnet build define an environment variable called "USE_MSBUILD"
+let useMsBuildToolchain = not (isNull (Environment.environVar "USE_MSBUILD"))
+
 
 Target.create "Clean" (fun _ ->
-    Trace.log "--Cleaning 'bin' and 'temp' directories"
-    Shell.cleanDirs [ "bin"; "temp" ]
-
-    )
+    Trace.log "--Cleaning various directories"
+    !!"bin" ++ "temp" ++ "test/bin" ++ "test/obj" ++ "src/**/bin" ++ "src/**/obj" |> Shell.cleanDirs)
 
 Target.create "AssemblyInfo" (fun _ ->
     Trace.log "--Creating new assembly files with appropriate version number and info"
@@ -58,8 +60,27 @@ Target.create "AssemblyInfo" (fun _ ->
             let fileName = folderName + @"/" + "AssemblyInfo.fs"
             AssemblyInfoFile.createFSharp fileName attributes))
 
+Target.create "Install" (fun _ ->
+    Trace.log "--Installing DotNet Core SDK if necessary"
+    if (not useMsBuildToolchain) then
+        DotNet.install (fun opt -> { opt with Version = DotNet.Version "2.1.806" }) |> ignore)
+
+
+Target.create "Build" (fun _ ->
+    Trace.log "--Building the binary files for distribution"
+    if useMsBuildToolchain then
+        Trace.log "--Building with MsBuild was configured"
+    // MSBuildRelease "" "Rebuild" (!!"ExcelProvider.sln") |> ignore
+    else
+        Trace.log "--Building with dotnet core was configured"
+        let config = DotNet.BuildConfiguration.Release
+        let setParams (p : DotNet.BuildOptions) =
+            { p with Configuration = config }
+        DotNet.build setParams "ExcelProvider.sln")
+
+
 Target.create "All" ignore
 
-"Clean" ==> "AssemblyInfo" ==> "All"
+"Clean" ==> "AssemblyInfo" ==> "Install" ==> "Build" ==> "All"
 
 Target.runOrDefault "All"

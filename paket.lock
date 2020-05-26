@@ -598,6 +598,14 @@ RESTRICTION: || (== net461) (== netcoreapp2.0)
 NUGET
   remote: https://www.nuget.org/api/v2
     FSharp.Core (4.3.4)
+    FsUnit (3.0)
+      FSharp.Core (>= 3.1.2.5) - restriction: || (== net461) (&& (== netcoreapp2.0) (< netstandard1.6))
+      FSharp.Core (>= 4.1) - restriction: || (&& (== net461) (>= netstandard1.6)) (== netcoreapp2.0)
+      NETStandard.Library (>= 1.6) - restriction: || (&& (== net461) (>= netstandard1.6)) (== netcoreapp2.0)
+      NUnit (>= 3.6)
+    Microsoft.CodeCoverage (16.6.1) - restriction: || (== net461) (&& (== netcoreapp2.0) (>= net45)) (&& (== netcoreapp2.0) (>= netcoreapp2.1))
+    Microsoft.NET.Test.Sdk (16.6.1)
+      Microsoft.CodeCoverage (>= 16.6.1) - restriction: || (== net461) (&& (== netcoreapp2.0) (>= net45)) (&& (== netcoreapp2.0) (>= netcoreapp2.1))
     Microsoft.NETCore.Platforms (3.1.1) - restriction: || (&& (== net461) (< net45) (>= netstandard1.6)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.0)
     Microsoft.NETCore.Targets (3.1) - restriction: || (&& (== net461) (< net45) (>= netstandard1.6)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.0)
     NETStandard.Library (2.0.3) - restriction: || (&& (== net461) (>= netstandard1.6)) (== netcoreapp2.0)
@@ -650,6 +658,3 @@ NUGET
       Microsoft.NETCore.Platforms (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.0)
       Microsoft.NETCore.Targets (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.0)
       System.Runtime (>= 4.3) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.0)
-GITHUB
-  remote: fsprojects/FsUnit
-    src/FsUnit.NUnit/FsUnit.fs (3fa3ec4f7dc79c2d6b014087450072b35fb7df2d)

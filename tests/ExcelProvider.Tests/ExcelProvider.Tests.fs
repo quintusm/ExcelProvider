@@ -1,12 +1,13 @@
 module FSharp.Interop.Excel.Tests.ExcelProviderTests
 
-open NUnit.Framework
-open FSharp.Interop.Excel
-open FsUnit
-
 open System
 open System.Collections.Generic
 open System.IO
+
+open NUnit.Framework
+open FsUnit
+
+open FSharp.Interop.Excel
 
 type BookTest = ExcelFile<"BookTest.xls", "Sheet1", ForceString=true>
 type HeaderTest = ExcelFile<"BookTestWithHeader.xls", Range="A2", ForceString=true>

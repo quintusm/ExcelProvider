@@ -1,4 +1,7 @@
 group Test
-NUnit
 FSharp.Core
-File:FsUnit.fs
+Microsoft.NET.Test.Sdk
+NUnit
+NUnit.Console 
+NUnit3TestAdapter 
+FsUnit

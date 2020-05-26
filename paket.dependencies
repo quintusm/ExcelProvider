@@ -1,13 +1,13 @@
 version 5.245.1
 source https://nuget.org/api/v2
 
-frameworks: net45, netcoreapp2.0, netstandard2.0
+frameworks: net46, netcoreapp2.0, netstandard2.0
 
 nuget ExcelDataReader
 nuget ExcelDataReader.DataSet
 nuget FSharp.Core 4.3.4
 nuget NetStandard.Library.NetFramework
-nuget System.Text.Encoding.CodePages
+nuget System.Text.Encoding.CodePages 
 
 github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fsi
 github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fs
@@ -19,6 +19,7 @@ group Build
   nuget Fake.Core.Target
   nuget Fake.Core.ReleaseNotes
   nuget Fake.DotNet.AssemblyInfoFile
+  nuget Fake.DotNet.Cli
   nuget Fake.IO.FileSystem
 
 

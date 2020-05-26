@@ -9,6 +9,7 @@ open Fake.DotNet
 open Fake.IO
 open Fake.IO.Globbing.Operators
 
+
 Target.initEnvironment()
 
 // The name of the project
@@ -78,9 +79,14 @@ Target.create "Build" (fun _ ->
             { p with Configuration = config }
         DotNet.build setParams "ExcelProvider.sln")
 
+Target.create "RunUnitTests" (fun _ ->
+    Trace.log "-- Run the unit tests using test runner"
+    let testProject = @"tests/ExcelProvider.Tests/ExcelProvider.Tests.fsproj"
+    [ testProject ] |> Testing.NUnit3.run (fun p -> { p with ShadowCopy = false }))
+
 
 Target.create "All" ignore
 
-"Clean" ==> "AssemblyInfo" ==> "Install" ==> "Build" ==> "All"
+"Clean" ==> "AssemblyInfo" ==> "Install" ==> "Build" ==> "RunUnitTests" ==> "All"
 
 Target.runOrDefault "All"

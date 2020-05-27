@@ -7,7 +7,6 @@ nuget ExcelDataReader
 nuget ExcelDataReader.DataSet
 nuget FSharp.Core 4.3.4
 nuget NetStandard.Library.NetFramework
-nuget Microsoft.Windows.Compatibility
 nuget System.Text.Encoding.CodePages
 
 github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fsi

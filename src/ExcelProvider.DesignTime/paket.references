@@ -4,4 +4,5 @@ File:ProvidedTypes.fs
 FSharp.Core
 ExcelDataReader
 ExcelDataReader.DataSet
-System.Text.Encoding.CodePages framework: netstandard2.0,netcoreapp2.0
+Microsoft.Windows.Compatibility framework: netcoreapp2.1
+System.Text.Encoding.CodePages framework: netstandard2.0,netcoreapp2.1

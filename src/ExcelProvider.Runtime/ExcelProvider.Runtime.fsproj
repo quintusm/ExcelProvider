@@ -4,7 +4,7 @@
   <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFrameworks>netstandard2.0; net46</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0; net461</TargetFrameworks>
     <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
     <DebugType>portable</DebugType>
   </PropertyGroup>
@@ -28,19 +28,19 @@
   </ItemGroup>
   <Target Name="BeforeBuild">
     <MSBuild Projects="..\ExcelProvider.DesignTime\ExcelProvider.DesignTime.fsproj" Targets="Restore" />
-    <MSBuild Projects="..\ExcelProvider.DesignTime\ExcelProvider.DesignTime.fsproj" Targets="Build" Properties="Configuration=$(Configuration);TargetFramework=netcoreapp2.0" />
+    <MSBuild Projects="..\ExcelProvider.DesignTime\ExcelProvider.DesignTime.fsproj" Targets="Build" Properties="Configuration=$(Configuration);TargetFramework=netcoreapp2.1" />
     <MSBuild Projects="..\ExcelProvider.DesignTime\ExcelProvider.DesignTime.fsproj" Targets="Build" Properties="Configuration=$(Configuration);TargetFramework=netstandard2.0" />
-    <MSBuild Projects="..\ExcelProvider.DesignTime\ExcelProvider.DesignTime.fsproj" Targets="Build" Properties="Configuration=$(Configuration);TargetFramework=net46" />
+    <MSBuild Projects="..\ExcelProvider.DesignTime\ExcelProvider.DesignTime.fsproj" Targets="Build" Properties="Configuration=$(Configuration);TargetFramework=net461" />
   </Target>
   <Target Name="AfterBuild">
-    <CreateItem Include="..\ExcelProvider.DesignTime\bin\$(Configuration)\netcoreapp2.0\*.dll;..\ExcelProvider.DesignTime\bin\$(Configuration)\netcoreapp2.0\*.pdb">
+    <CreateItem Include="..\ExcelProvider.DesignTime\bin\$(Configuration)\netcoreapp2.1\*.dll;..\ExcelProvider.DesignTime\bin\$(Configuration)\netcoreapp2.1\*.pdb">
       <Output TaskParameter="Include" ItemName="DesignTimeBinaries1" />
     </CreateItem>
-    <Copy SourceFiles="@(DesignTimeBinaries1)" DestinationFolder="$(OutputPath)/../typeproviders/fsharp41/netcoreapp2.0" />
-    <CreateItem Include="..\ExcelProvider.DesignTime\bin\$(Configuration)\net46\*.dll;..\ExcelProvider.DesignTime\bin\$(Configuration)\net46\*.pdb">
+    <Copy SourceFiles="@(DesignTimeBinaries1)" DestinationFolder="$(OutputPath)/../typeproviders/fsharp41/netcoreapp2.1" />
+    <CreateItem Include="..\ExcelProvider.DesignTime\bin\$(Configuration)\net461\*.dll;..\ExcelProvider.DesignTime\bin\$(Configuration)\net461\*.pdb">
       <Output TaskParameter="Include" ItemName="DesignTimeBinaries2" />
     </CreateItem>
-    <Copy SourceFiles="@(DesignTimeBinaries2)" DestinationFolder="$(OutputPath)/../typeproviders/fsharp41/net46" />
+    <Copy SourceFiles="@(DesignTimeBinaries2)" DestinationFolder="$(OutputPath)/../typeproviders/fsharp41/net461" />
     <CreateItem Include="..\ExcelProvider.DesignTime\bin\$(Configuration)\netstandard2.0\*.dll;..\ExcelProvider.DesignTime\bin\$(Configuration)\netstandard2.0\*.pdb">
       <Output TaskParameter="Include" ItemName="DesignTimeBinaries3" />
     </CreateItem>

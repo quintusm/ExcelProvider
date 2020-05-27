@@ -5,7 +5,7 @@ frameworks: net461, netcoreapp2.1, netstandard2.0
 
 nuget ExcelDataReader
 nuget ExcelDataReader.DataSet
-nuget FSharp.Core 4.3.4
+nuget FSharp.Core 4.7.0
 nuget NetStandard.Library.NetFramework
 nuget System.Text.Encoding.CodePages
 
@@ -33,6 +33,6 @@ group Test
   nuget NUnit
   nuget NUnit.Console
   nuget NUnit3TestAdapter version_in_path: true
-  nuget FSharp.Core redirects:on
+  nuget FSharp.Core 4.7.0 redirects:on
   nuget FsUnit
 

@@ -4,7 +4,7 @@ NUGET
     ExcelDataReader (3.6)
     ExcelDataReader.DataSet (3.6)
       ExcelDataReader (>= 3.6)
-    FSharp.Core (4.3.4)
+    FSharp.Core (4.7)
     Microsoft.NETCore.Platforms (3.1.1) - restriction: || (== net461) (== netcoreapp2.1) (&& (== netstandard2.0) (>= net461)) (&& (== netstandard2.0) (>= netcoreapp2.0))
     NETStandard.Library (2.0.3) - restriction: || (== net461) (&& (== netcoreapp2.1) (>= net461)) (&& (== netstandard2.0) (>= net461))
       Microsoft.NETCore.Platforms (>= 1.1)
@@ -612,7 +612,7 @@ GROUP Test
 RESTRICTION: || (== net461) (== netcoreapp2.1)
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    FSharp.Core (4.7.2) - redirects: on
+    FSharp.Core (4.7) - redirects: on
     FsUnit (3.8.1)
       FSharp.Core (>= 4.2.3)
       NETStandard.Library (>= 2.0.3) - restriction: || (&& (== net461) (< net46) (>= netstandard2.0)) (== netcoreapp2.1)

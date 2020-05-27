@@ -1,6 +1,6 @@
 RESTRICTION: || (== net461) (== netcoreapp2.1) (== netstandard2.0)
 NUGET
-  remote: https://www.nuget.org/api/v2
+  remote: https://api.nuget.org/v3/index.json
     ExcelDataReader (3.6)
     ExcelDataReader.DataSet (3.6)
       ExcelDataReader (>= 3.6)
@@ -611,7 +611,7 @@ NUGET
 GROUP Test
 RESTRICTION: || (== net461) (== netcoreapp2.1)
 NUGET
-  remote: https://www.nuget.org/api/v2
+  remote: https://api.nuget.org/v3/index.json
     FSharp.Core (4.7.2) - redirects: on
     FsUnit (3.8.1)
       FSharp.Core (>= 4.2.3)
@@ -631,7 +631,7 @@ NUGET
       Microsoft.CodeCoverage (>= 16.6.1)
       Microsoft.TestPlatform.TestHost (>= 16.6.1) - restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
     Microsoft.NETCore.Platforms (3.1.1) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
-    Microsoft.NETCore.Targets (3.1) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
+    Microsoft.NETCore.Targets (3.1.0) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
     Microsoft.TestPlatform.ObjectModel (16.6.1) - restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
       NuGet.Frameworks (>= 5.0)
     Microsoft.TestPlatform.TestHost (16.6.1) - restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
@@ -761,7 +761,7 @@ NUGET
       System.Runtime (>= 4.3) - restriction: || (&& (== net461) (< net46)) (== netcoreapp2.1)
       System.Runtime.Extensions (>= 4.3) - restriction: || (&& (== net461) (< net46)) (== netcoreapp2.1)
       System.Runtime.InteropServices (>= 4.3) - restriction: || (&& (== net461) (< net46)) (== netcoreapp2.1)
-    System.IO (4.3) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
+    System.IO (4.3.0) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
       Microsoft.NETCore.Platforms (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       Microsoft.NETCore.Targets (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       System.Runtime (>= 4.3) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
@@ -784,7 +784,7 @@ NUGET
       System.Resources.ResourceManager (>= 4.3) - restriction: || (&& (== net461) (< net45) (>= netstandard1.6)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       System.Runtime (>= 4.3) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       System.Runtime.Extensions (>= 4.3) - restriction: || (&& (== net461) (< net45) (>= netstandard1.6)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
-    System.Reflection (4.3) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
+    System.Reflection (4.3.0) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
       Microsoft.NETCore.Platforms (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       Microsoft.NETCore.Targets (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       System.IO (>= 4.3) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
@@ -795,7 +795,7 @@ NUGET
       Microsoft.NETCore.Targets (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       System.Reflection (>= 4.3) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       System.Runtime (>= 4.3) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
-    System.Reflection.Primitives (4.3) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
+    System.Reflection.Primitives (4.3.0) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
       Microsoft.NETCore.Platforms (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       Microsoft.NETCore.Targets (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       System.Runtime (>= 4.3) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
@@ -837,7 +837,7 @@ NUGET
       System.Security.Principal.Windows (>= 4.7)
     System.Security.Principal.Windows (4.7.0) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
       Microsoft.NETCore.Platforms (>= 3.1) - restriction: || (&& (== net461) (>= netcoreapp2.0)) (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
-    System.Text.Encoding (4.3) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
+    System.Text.Encoding (4.3.0) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (== netcoreapp2.1)
       Microsoft.NETCore.Platforms (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       Microsoft.NETCore.Targets (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       System.Runtime (>= 4.3) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
@@ -851,7 +851,7 @@ NUGET
     System.Threading (4.3.0) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       System.Runtime (>= 4.3) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       System.Threading.Tasks (>= 4.3) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
-    System.Threading.Tasks (4.3) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
+    System.Threading.Tasks (4.3.0) - version_in_path: true, restriction: || (&& (== net461) (>= netcoreapp2.1)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       Microsoft.NETCore.Platforms (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       Microsoft.NETCore.Targets (>= 1.1) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)
       System.Runtime (>= 4.3) - restriction: || (&& (== net461) (< net45)) (&& (== net461) (>= netcoreapp5.0)) (== netcoreapp2.1)

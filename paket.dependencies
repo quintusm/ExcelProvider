@@ -1,5 +1,5 @@
 version 5.245.1
-source https://nuget.org/api/v2
+source https://api.nuget.org/v3/index.json
 
 frameworks: net461, netcoreapp2.1, netstandard2.0
 
@@ -26,7 +26,7 @@ group Build
 
 
 group Test
-  source https://nuget.org/api/v2
+  source https://api.nuget.org/v3/index.json
   frameworks: net461, netcoreapp2.1
 
   nuget Microsoft.NET.Test.Sdk

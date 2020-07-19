@@ -1,11 +1,10 @@
-version 5.245.1
 source https://api.nuget.org/v3/index.json
 
-frameworks: net461, netcoreapp2.1, netstandard2.0
+framework: auto-detect
 
 nuget ExcelDataReader
 nuget ExcelDataReader.DataSet
-nuget FSharp.Core 4.7.0
+nuget FSharp.Core
 nuget NetStandard.Library.NetFramework
 nuget System.Text.Encoding.CodePages
 
@@ -14,8 +13,6 @@ github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fs
 
 group Build
   source https://api.nuget.org/v3/index.json
-  generate_load_scripts:true
-  framework: netstandard2.0
   nuget Fake.Core.Target
   nuget Fake.Core.ReleaseNotes
   nuget Fake.DotNet.AssemblyInfoFile
@@ -23,16 +20,12 @@ group Build
   nuget Fake.DotNet.Testing.NUnit
   nuget Fake.IO.FileSystem
 
-
-
 group Test
   source https://api.nuget.org/v3/index.json
-  frameworks: net461, netcoreapp2.1
-
   nuget Microsoft.NET.Test.Sdk
   nuget NUnit
   nuget NUnit.Console
   nuget NUnit3TestAdapter version_in_path: true
-  nuget FSharp.Core 4.7.0 redirects:on
+  nuget FSharp.Core 
   nuget FsUnit
 

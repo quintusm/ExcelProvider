@@ -13,6 +13,7 @@ github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fs
 
 group Build
   source https://api.nuget.org/v3/index.json
+  generate_load_scripts:true
   nuget Fake.Core.Target
   nuget Fake.Core.ReleaseNotes
   nuget Fake.DotNet.AssemblyInfoFile
@@ -22,10 +23,9 @@ group Build
 
 group Test
   source https://api.nuget.org/v3/index.json
+  nuget FSharp.Core
+  nuget FsUnit
   nuget Microsoft.NET.Test.Sdk
   nuget NUnit
   nuget NUnit.Console
   nuget NUnit3TestAdapter version_in_path: true
-  nuget FSharp.Core 
-  nuget FsUnit
-

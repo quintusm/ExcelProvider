@@ -60,6 +60,25 @@ Target.create "Clean" (fun _ ->
     ++ "src/**/obj"
     |> Shell.cleanDirs)
 
+Target.create "CleanDocs" (fun _ ->
+    Trace.log "--Clean documentation folders"
+    Shell.cleanDirs [ "docs/output" ])
+
+TODO: Start work here next time. GenerateHelp not working yet....
+Target.create "GenerateHelp" (fun _ ->
+    Trace.log "--Generating Help Files"
+    Shell.rm "docs/content/release-notes.md"
+    Shell.cp "docs/content/" "RELEASE_NOTES.md"
+    Shell.rename "docs/content/release-notes.md" "docs/content/RELEASE_NOTES.md"
+
+    Shell.rm "docs/content/license.md"
+    Shell.cp "docs/content/" "LICENSE.txt"
+    Shell.rename "docs/content/license.md" "docs/content/LICENSE.txt"
+
+    )
+
+
+
 Target.create "AssemblyInfo" (fun _ ->
     Trace.log "--Creating new assembly files with appropriate version number and info"
 
@@ -142,6 +161,8 @@ Target.create "All" ignore
 ==> "Build"
 ==> "CopyBinaries"
 ==> "RunUnitTests"
+==> "CleanDocs"
+==> "GenerateHelp"
 ==> "All"
 
 Target.runOrDefault "All"

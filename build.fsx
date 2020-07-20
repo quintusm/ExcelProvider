@@ -7,6 +7,7 @@ open Fake.Core
 open Fake.Core.TargetOperators
 open Fake.DotNet
 open Fake.IO
+open Fake.IO.FileSystemOperators
 open Fake.IO.Globbing.Operators
 
 
@@ -99,6 +100,26 @@ Target.create "Build" (fun _ ->
 
         DotNet.build setParams "ExcelProvider.sln")
 
+
+Target.create "CopyBinaries" (fun _ ->
+    Trace.log "-- Copy binaries to desired location"
+    !! "src/**/*.??proj"
+    -- "src/**/*.shproj"
+    |> Seq.map (fun f ->
+        (
+         let source =
+             (Path.GetDirectoryName f) </> "bin/Release"
+
+         let target =
+             "bin" </> (Path.GetFileNameWithoutExtension f)
+
+         source, target))
+    |> Seq.iter (fun (fromDir, toDir) -> Shell.copyDir toDir fromDir (fun _ -> true)))
+
+
+
+
+
 Target.create "RunUnitTests" (fun _ ->
     Trace.log "-- Run the unit tests using test runner"
 
@@ -119,6 +140,7 @@ Target.create "All" ignore
 "Clean"
 ==> "AssemblyInfo"
 ==> "Build"
+==> "CopyBinaries"
 ==> "RunUnitTests"
 ==> "All"
 

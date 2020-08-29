@@ -37,12 +37,13 @@ let useMsBuildToolchain =
     not (isNull (Environment.environVar "USE_MSBUILD"))
 
 Trace.log "--Installing DotNet Core SDK if necessary"
+let dotnetSdkVersion = "3.1.100"
 
 let install =
     lazy
         (DotNet.install (fun opt ->
             { opt with
-                  Version = DotNet.Version "2.1.806" }))
+                  Version = DotNet.Version dotnetSdkVersion }))
 
 let getSdkPath () = install.Value
 
@@ -64,15 +65,14 @@ Target.create "CleanDocs" (fun _ ->
     Trace.log "--Clean documentation folders"
     Shell.cleanDirs [ "docs/output" ])
 
-TODO: Start work here next time. GenerateHelp not working yet....
 Target.create "GenerateHelp" (fun _ ->
     Trace.log "--Generating Help Files"
     Shell.rm "docs/content/release-notes.md"
-    Shell.cp "docs/content/" "RELEASE_NOTES.md"
+    Shell.copyFile "docs/content/" "./RELEASE_NOTES.md"
     Shell.rename "docs/content/release-notes.md" "docs/content/RELEASE_NOTES.md"
 
     Shell.rm "docs/content/license.md"
-    Shell.cp "docs/content/" "LICENSE.txt"
+    Shell.copyFile "docs/content/" "./LICENSE.txt"
     Shell.rename "docs/content/license.md" "docs/content/LICENSE.txt"
 
     )
